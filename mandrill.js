@@ -3,8 +3,10 @@ var request = require('request'),
 
 var MANDRILL_API_ROOT = 'https://mandrillapp.com/api/1.0/'; 
 
-function makeMandrill(key)
+function makeMandrill(key,testAPIRoot)
 {
+    // enables API to be mocked
+    if (testAPIRoot) MANDRILL_API_ROOT = testAPIRoot; 
     function mandrill(path, opts, callback)
     {
         var format = path.split('.');
