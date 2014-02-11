@@ -9,6 +9,7 @@ function makeMandrill(key,testAPIRoot)
     if (testAPIRoot) MANDRILL_API_ROOT = testAPIRoot; 
     function mandrill(path, opts, callback)
     {
+        console.log ( 'mandrill api' , MANDRILL_API_ROOT , testAPIRoot);
         var format = path.split('.');
 
         path = format[0];
